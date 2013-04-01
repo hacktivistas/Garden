@@ -31,7 +31,7 @@ public function Setup() {
 			'DateInserted' => Gdn_Format::ToDateTime(),
 			'DateUpdated' => Gdn_Format::ToDateTime(),
 			'ParentCategoryID' => -1
-		));
+		);
 		// Sucursales ID=1000
 		$datoscategoria['Name']='Sucursales';
 		$datoscategoria['UrlCode']='sucursales';
