@@ -43,7 +43,7 @@ public function Setup() {
 		$SQL->Insert('Category', $datoscategoria);
 
 		// GENERAMOS TODAS LAS SUCURSALES Y PROVINCIAS A PARTIR DEL CSV
-		$provincias = [];
+		$provincias = array();
 		// convertimos el CSV a array bidimensional
 		$csv = $this->leerCSV(PATH_PLUGINS.'/Bankia/bankias.csv',';');
 		$num_lineas = count($csv);
