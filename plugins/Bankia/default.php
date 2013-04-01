@@ -7,9 +7,16 @@ $PluginInfo['Bankia'] = array(
 
 class BankiaPlugin extends Gdn_Plugin {
 
+private function urlAmistosa ($str) {
+	$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
+	$clean = preg_replace("/[^a-zA-Z0-9\/_| -]/", '', $clean);
+	$clean = strtolower(trim($clean, '-'));
+	$clean = preg_replace("/[\/_| -]+/", '-', $clean);
+	return $clean;
+}
+
 /* devuelve un array bidimensional con el contenido del csv */
 private function leerCSV ($nombre_archivo, $delimitador){
-	setlocale(LC_ALL, 'es_ES.UTF-8');
 	$archivo = fopen($nombre_archivo, 'r');
 	while (!feof($archivo) ) {
 		$linea[] = fgetcsv($archivo, 1024, $delimitador);
@@ -44,6 +51,7 @@ public function Setup() {
 
 		// GENERAMOS TODAS LAS SUCURSALES Y PROVINCIAS A PARTIR DEL CSV
 		$provincias = array();
+		setlocale(LC_ALL, 'es_ES.UTF-8');
 		// convertimos el CSV a array bidimensional
 		$csv = $this->leerCSV(PATH_PLUGINS.'/Bankia/bankias.csv',';');
 		$num_lineas = count($csv);
@@ -63,13 +71,14 @@ public function Setup() {
 					$provincias[] = $csv[$i][3];
 				}
 			}
-		}
+		}		
+		setlocale(LC_ALL, 'en_US.UTF8');
 		// insertamos las provincias
 		foreach ($provincias as $provincia) {
 			$datoscategoria = array(
 			'CategoryID' => NULL,
 			'Name' => $provincia,
-			'UrlCode' => strtolower($provincia),
+			'UrlCode' => $this->urlAmistosa($provincia),
 			'Description' => NULL,
 			'ParentCategoryID' => 1001
 			);
