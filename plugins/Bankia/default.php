@@ -67,19 +67,22 @@ public function Setup() {
 
 		/* GENERAMOS TODAS LAS SUCURSALES */
 		//obtener csv a array
-	        $csv = $this->leerCSV('/home/brankia/www/foros/plugins/Bankia/bankias.csv',';');
+	        $csv = $this->leerCSV(PATH_PLUGINS.'/Bankia/bankias.csv',';');
         	for ($i=1; $i<count($csv); $i++) {
+			if ($csv[$i][7]) {
                 	$datoscategoria = array(
                         	'CategoryID' => 109+$i,
-                        	'Name' => $csv[$i][2].'-'.$csv[$i][0],
-                	        'UrlCode' => $csv[$i][7],
+				'Name' => 'Oficina '.$csv[$i][7],
+                	        'UrlCode' => 'oficina-'.$csv[$i][7],
               	        	'Description' => $csv[$i][0].'<br>'.$csv[$i][1].'-'.$csv[$i][2].'<br>Tf: '.$csv[$i][4],
                         	'DateInserted' => Gdn_Format::ToDateTime(),
 			        'DateUpdated' => Gdn_Format::ToDateTime(),
 				'ParentCategoryID' => 100
 			);
+                        	/*'Name' => $csv[$i][2].'-'.$csv[$i][0],*/
 
 			$SQL->Insert('Category', $datoscategoria);
+			}
 	        }
 
 		//reconstruimos el árbol
