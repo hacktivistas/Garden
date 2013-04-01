@@ -80,7 +80,7 @@ public function Setup() {
 		$CategoryModel = new CategoryModel();
 		$CategoryModel->RebuildTree();
 		unset($CategoryModel);
-
+	} //if
 } //fin Setup
 } //fin clase
 
