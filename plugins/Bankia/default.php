@@ -58,13 +58,11 @@ public function Setup() {
 		// iteramos descartando la primera línea e insertamos sucursales
 		for ($i=1; $i<$num_lineas; $i++) {
 			if ($csv[$i][7]) {
-				$datoscategoria = array(
-				'CategoryID' => 1009+$i,
-				'Name' => 'Oficina '.$csv[$i][7],
-				'UrlCode' => 'oficina-'.$csv[$i][7],
-				'Description' => $csv[$i][0].'<br>'.$csv[$i][1].'-'.$csv[$i][2].'<br>Tf: '.$csv[$i][4],
-				'ParentCategoryID' => 1000
-				);
+				$datoscategoria['CategoryID'] = 1009+$i;
+				$datoscategoria['Name'] = 'Oficina '.$csv[$i][7];
+				$datoscategoria['UrlCode'] = 'oficina-'.$csv[$i][7];
+				$datoscategoria['Description'] = $csv[$i][0].'<br>'.$csv[$i][1].'-'.$csv[$i][2].'<br>Tf: '.$csv[$i][4];
+				$datoscategoria['ParentCategoryID'] = 1000;
 				$SQL->Insert('Category', $datoscategoria);
 				// registramos las provincias
 				if (!in_array($csv[$i][3], $provincias)) {
@@ -75,13 +73,11 @@ public function Setup() {
 		setlocale(LC_ALL, 'en_US.UTF8');
 		// insertamos las provincias
 		foreach ($provincias as $provincia) {
-			$datoscategoria = array(
-			'CategoryID' => NULL,
-			'Name' => $provincia,
-			'UrlCode' => $this->urlAmistosa($provincia),
-			'Description' => NULL,
-			'ParentCategoryID' => 1001
-			);
+			unset($datoscategoria['CategoryID']);
+			$datoscategoria['Name'] = $provincia;
+			$datoscategoria['UrlCode'] = $this->urlAmistosa($provincia);
+			unset($datoscategoria['Description']);
+			$datoscategoria['ParentCategoryID'] = 1001;
 			$SQL->Insert('Category', $datoscategoria);
 		}
 
