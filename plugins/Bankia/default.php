@@ -104,14 +104,25 @@ private function insertarSucursales() {
 // inserta un nuevo campo 'Sucursal' en la tabla User
 private function insertarCampoSucursal() {
 	$constructor = Gdn::Database()->Structure();
-	$constructor->Table('User')->Column('Sucursal', 'int(11)');
+	$constructor->Table('User')->Column('Sucursal', 'int(11)')->Set();
 }
 
+// extrae el número de sucursal de una cadena con la forma oficina-num_sucursal
+private function extraerOficina($url) {
+	$resultado = 0;
+	preg_match ('/oficina-([0-9]+)/', $url, $coincidencias);
+	if (count($coincidencias)==2) $resultado = $coincidencias[1];
+	return $resultado;
+}
+
+// Generamos los campos ocultos en los formularios de registro del Target
 public function EntryController_Register_Handler($emisor) {
-	$emisor->Form->AddHidden('Sucursal', $_GET['Target']);
+	$emisor->Form->AddHidden('Sucursal', $this->extraerOficina($_GET['Target']));
 }
 
-//public function DiscussionsController_AfterDiscussionTitle_Handler($Sender) {
+public function EntryController_ConnectData_Handler($emisor) {
+        $emisor->Form->AddHidden('Sucursal', $this->extraerOficina($_GET['Target']));
+}
 
 // se ejecuta cada vez que se activa el plugin
 public function Setup() {
