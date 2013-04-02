@@ -1,5 +1,9 @@
-<?php if (!defined('APPLICATION')) exit();
+<?php 
 
+// Evitamos que se ejecute fuera de la aplicación
+if (!defined('APPLICATION')) exit();
+
+// Información que aparece en el panel de gestión de plugins
 $PluginInfo['Bankia'] = array(
 	'Description' => 'Plugin para toqueabankia.net',
 	'Version' => '0.1'
@@ -7,6 +11,8 @@ $PluginInfo['Bankia'] = array(
 
 class BankiaPlugin extends Gdn_Plugin {
 
+// Elimina tildes y sustituye espacios por guiones, para formar una url amistosa
+// http://cubiq.org/the-perfect-php-clean-url-generator
 private function urlAmistosa ($str) {
 	$clean = iconv('UTF-8', 'ASCII//TRANSLIT', $str);
 	$clean = preg_replace("/[^a-zA-Z0-9\/_| -]/", '', $clean);
@@ -15,18 +21,27 @@ private function urlAmistosa ($str) {
 	return $clean;
 }
 
-/* devuelve un array bidimensional con el contenido del csv */
-private function leerCSV ($nombre_archivo, $delimitador){
-	$archivo = fopen($nombre_archivo, 'r');
+// Devuelve un array bidimensional con el contenido del csv
+// http://www.codedevelopr.com/articles/reading-csv-files-into-php-array/
+private function leerCSV ($ruta_archivo, $delimitador){
+	$archivo = fopen($ruta_archivo, 'r');
 	while (!feof($archivo) ) {
-		$linea[] = fgetcsv($archivo, 1024, $delimitador);
+		$lineas[] = fgetcsv($archivo, 1024, $delimitador);
 	}
 	fclose($archivo);
-	return $linea;
+	return $lineas;
 }
 
-public function Setup() {
+// Importante para recalcular la profundidad en el anidamiento de las categorías
+// cuando editamos la tabla directamente
+private function reconstruirArbolCategorias() {
+	$CategoryModel = new CategoryModel();
+	$CategoryModel->RebuildTree();
+	unset($CategoryModel);
+}
 
+// inserta las sucursales y las provincias en la tabla Category
+private function insertarSucursales() {
 	$SQL = Gdn::Database()->SQL();
 
 	// Si ya existe la categoria con ID 1000 no hacemos nada
@@ -52,6 +67,7 @@ public function Setup() {
 		// GENERAMOS TODAS LAS SUCURSALES Y PROVINCIAS A PARTIR DEL CSV
 		$provincias = array();
 		setlocale(LC_ALL, 'es_ES.UTF-8');
+		$datoscategoria['ParentCategoryID'] = 1000;
 		// convertimos el CSV a array bidimensional
 		$csv = $this->leerCSV(PATH_PLUGINS.'/Bankia/bankias.csv',';');
 		$num_lineas = count($csv);
@@ -62,30 +78,46 @@ public function Setup() {
 				$datoscategoria['Name'] = 'Oficina '.$csv[$i][7];
 				$datoscategoria['UrlCode'] = 'oficina-'.$csv[$i][7];
 				$datoscategoria['Description'] = $csv[$i][0].'<br>'.$csv[$i][1].'-'.$csv[$i][2].'<br>Tf: '.$csv[$i][4];
-				$datoscategoria['ParentCategoryID'] = 1000;
 				$SQL->Insert('Category', $datoscategoria);
 				// registramos las provincias
 				if (!in_array($csv[$i][3], $provincias)) {
 					$provincias[] = $csv[$i][3];
 				}
 			}
-		}		
-		setlocale(LC_ALL, 'en_US.UTF8');
+		}
 		// insertamos las provincias
+		setlocale(LC_ALL, 'en_US.UTF8');
+		unset($datoscategoria['CategoryID']);
+		unset($datoscategoria['Description']);
+		$datoscategoria['ParentCategoryID'] = 1001;
 		foreach ($provincias as $provincia) {
-			unset($datoscategoria['CategoryID']);
 			$datoscategoria['Name'] = $provincia;
 			$datoscategoria['UrlCode'] = $this->urlAmistosa($provincia);
-			unset($datoscategoria['Description']);
-			$datoscategoria['ParentCategoryID'] = 1001;
 			$SQL->Insert('Category', $datoscategoria);
 		}
 
 		//reconstruimos el árbol
-		$CategoryModel = new CategoryModel();
-		$CategoryModel->RebuildTree();
-		unset($CategoryModel);
+		$this->reconstruirArbolCategorias();
 	} //if
-} //fin Setup
+}
+
+// inserta un nuevo campo 'Sucursal' en la tabla User
+private function insertarCampoSucursal() {
+	$constructor = Gdn::Database()->Structure();
+	$constructor->Table('User')->Column('Sucursal', 'int(11)');
+}
+
+public function EntryController_Register_Handler($emisor) {
+	$emisor->Form->AddHidden('Sucursal', $_GET['Target']);
+}
+
+//public function DiscussionsController_AfterDiscussionTitle_Handler($Sender) {
+
+// se ejecuta cada vez que se activa el plugin
+public function Setup() {
+	$this->insertarSucursales();
+	$this->insertarCampoSucursal();
+}
+
 } //fin clase
 
