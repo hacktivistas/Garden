@@ -8,7 +8,7 @@
       <div class="Head" id="Head">
          <div class="Row">
             <!--<strong class="SiteTitle"><a href="{link path="/"}">{logo}</a></strong>-->
-            <strong class="SiteTitle"><a href="{link path="/"}"><img src="./themes/brankia/logoforo.png" /></a></strong>
+            <strong class="SiteTitle"><a href="{link path="/"}"><img src="/themes/brankia/logoforo.png" /></a></strong>
             <div class="SiteSearch">{searchbox}</div>
             <ul class="SiteMenu">
                <!-- {dashboard_link} -->
@@ -27,7 +27,7 @@
             <div class="Column PanelColumn" id="Panel">
                {module name="MeModule"}
                {asset name="Panel"}
-               <iframe src="./themes/brankia/foromap/index.html" width="100%" height="400"></iframe>
+               <iframe src="/themes/brankia/foromap/index.html" width="100%" height="400"></iframe>
             </div>
             <div class="Column ContentColumn" id="Content">
 				prueba iframe
