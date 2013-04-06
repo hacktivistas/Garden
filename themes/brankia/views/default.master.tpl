@@ -7,7 +7,8 @@
    <div id="Frame">
       <div class="Head" id="Head">
          <div class="Row">
-            <strong class="SiteTitle"><a href="{link path="/"}">{logo}</a></strong>
+            <!--<strong class="SiteTitle"><a href="{link path="/"}">{logo}</a></strong>-->
+            <strong class="SiteTitle"><a href="{link path="/"}"><img src="themes/brankia/logoforo.png" /></a></strong>
             <div class="SiteSearch">{searchbox}</div>
             <ul class="SiteMenu">
                <!-- {dashboard_link} -->
