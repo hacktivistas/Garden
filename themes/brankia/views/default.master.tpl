@@ -26,8 +26,12 @@
             <div class="Column PanelColumn" id="Panel">
                {module name="MeModule"}
                {asset name="Panel"}
+               <iframe src="themes/brankia/foromap/index.html" width="100%" height="400"></iframe>
             </div>
-            <div class="Column ContentColumn" id="Content">{asset name="Content"}</div>
+            <div class="Column ContentColumn" id="Content">
+				prueba iframe
+				{asset name="Content"}
+			</div>
          </div>
       </div>
       <div id="Foot">

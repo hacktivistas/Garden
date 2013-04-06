@@ -215,7 +215,7 @@ $Definition['GuestModule.Message'] = 'Pareces nuevo por aquí. Si quieres partic
 $Definition['he'] = 'El';
 $Definition['her'] = 'su';
 $Definition['his'] = 'su';
-$Definition['Howdy, Stranger!'] = '¡Hola Forastero!';
+$Definition['Howdy, Stranger!'] = '¡Toque a Bankia!';
 
 $Definition['I agree to the <a id="TermsOfService" class="Popup" target="terms" href="%s">terms of service</a>'] = 'Estoy de acuerdo con <a id="TermsOfService" class="Popup" target="terms" href="%s">los términos de servicio</a>';
 $Definition['I remember now!'] = '¡Acabo de recordarla!';
@@ -273,7 +273,7 @@ $Definition['Passwords don\'t match'] = 'Las contraseñas no coinciden.';
 $Definition['Permalink'] = 'Enlace Permanente';
 $Definition['Please wait while you are redirected. If you are not redirected, click <a href="%s">here</a>.'] = 'Por favor espera mientras te redireccionamos. Si no eres redireccionado, haz click <a href="%s">aquí</a>.';
 $Definition['Post Comment'] = 'Enviar Comentario';
-$Definition['Post Discussion'] = 'Enviar Discusión';
+$Definition['Post Discussion'] = 'Enviar mensaje';
 $Definition['Powered by Vanilla'] = 'Powered by Vanilla';
 $Definition['Preview'] = 'Previsualizar';
 $Definition['Profile Picture'] = 'Fotografía del perfil';
