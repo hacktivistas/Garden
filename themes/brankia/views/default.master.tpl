@@ -15,12 +15,15 @@
                {dashboard_link}
                {discussions_link}
                {activity_link}
-               <!-- {inbox_link} -->
+               {inbox_link}
                {custom_menu}
-               <!-- {profile_link}
-               {signinout_link}  -->
+               {profile_link}
+               <!-- {signinout_link}  -->
             </ul>
-         </div>
+        </div>
+                     <!-- botón escribir mensaje -->
+                <div class="centrardiscusion">{$Assets.Panel.NewDiscussionModule}</div>
+
       </div>
       <div id="Body">
 
@@ -35,6 +38,7 @@
 		{if $User.SignedIn}
 			<div><a class="Button Primary BigButton" href="">1. Viaja a tu foro</a></div> 
 		{else}
+			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="http://www.toqueabankia.net/toque.php">0. Regístrese</a></div>
 			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="/entry/signin?Target=discussions">1. Acceder</a></div>
 		{/if}
 
@@ -107,16 +111,18 @@
 
 		<!-- FIN SELECT PROVINCIAS -->
 
-<!--<a class="Button Primary Action NewDiscussion BigButton" href="/post/discussion/avila">Escribir mensaje</a>-->
+		
+
                <!--{asset name="Panel"}-->
 	    </div>
             <div class="Column ContentColumn" id="Content">
-				{asset name="Content"}
-			</div>
+			{asset name="Content"}
+		</div>
          </div>
       </div>
       <div id="Foot">
          <div class="Row">
+<!--{$Assets.Panel.NewDiscussionModule}-->
             <a href="{vanillaurl}" class="PoweredByVanilla" title="Community Software by Vanilla Forums">Powered by Vanilla</a>
             {asset name="Foot"}
          </div>

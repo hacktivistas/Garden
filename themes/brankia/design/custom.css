@@ -2,3 +2,16 @@
     background: #433128;
     color: #FFFFFF;
 }
+.centrardiscusion {
+    text-align: center;
+    margin-top: 10px;
+}
+.NewDiscussion {
+    display: inline;
+}
+#Head .centrardiscusion a {
+    color: #000000;
+}
+#Head ul li a {
+    color: #ffffff;
+}
