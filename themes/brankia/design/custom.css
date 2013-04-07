@@ -1,17 +1,18 @@
 #Head {
-    background: #433128;
-    color: #FFFFFF;
-}
-.centrardiscusion {
-    text-align: center;
-    margin-top: 10px;
+background: #433128;
+color: #fff;
 }
 .NewDiscussion {
-    display: inline;
+display: inline;
 }
-#Head .centrardiscusion a {
-    color: #000000;
+.H {
+margin-top: 18px;
 }
-#Head ul li a {
-    color: #ffffff;
+.sinmargen {
+padding: 0;
+margin: 0;
+border: 0;
+}
+.BreadcrumbsWrapper {
+margin-bottom: 5px;
 }

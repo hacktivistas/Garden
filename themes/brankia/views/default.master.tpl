@@ -18,7 +18,7 @@
                {inbox_link}
                {custom_menu}
                {profile_link}
-               <!-- {signinout_link}  -->		
+               {signinout_link}		
             </ul>
         </div>
 
@@ -26,8 +26,10 @@
       <div id="Body">
 
 <!-- iframe con el mapa oculto -->
-<iframe id="iframeforomap" src="http://bankia.mepone.net/map/foros.html" style="display:none;margin:0;padding:0;position:relative;top:0;left:0;width:100%;height:500px;z-index:1000;" width="100%" height="500"></iframe>
-
+<div id="mapita" class="sinmargen" style="display:none;">
+<iframe id="iframeforomap" src="http://bankia.mepone.net/map/foros.html" class="sinmargen" style="position:relative;top:0;left:0;width:100%;height:500px;z-index:1000;"></iframe>
+<div class="sinmargen" style="width:100%;"><a id="ocultarmapa" class="Button Primary BigButton" style="float:right;" href="">Ocultar mapa</a></div>
+</div>
 
          <div class="Row">
             <div class="BreadcrumbsWrapper">{breadcrumbs}</div>
@@ -109,22 +111,21 @@
 
 		<!-- FIN SELECT PROVINCIAS -->
 
-                <!-- botón escribir mensaje -->
-                {if $User.SignedIn}
-			<div style="margin: 20px auto;width:100%">{$Assets.Panel.NewDiscussionModule}</div>
-		{/if}
-		
-
-               <!--{asset name="Panel"}-->
+               <!-- asset name="Panel" -->
 	    </div>
+
+             <!-- BOTÓN: Escribir mensaje -->
+            {$Assets.Panel.NewDiscussionModule}
+
+
             <div class="Column ContentColumn" id="Content">
-			{asset name="Content"}
+
+		{asset name="Content"}
 		</div>
          </div>
       </div>
       <div id="Foot">
          <div class="Row">
-<!--{$Assets.Panel.NewDiscussionModule}-->
             <a href="{vanillaurl}" class="PoweredByVanilla" title="Community Software by Vanilla Forums">Powered by Vanilla</a>
             {asset name="Foot"}
          </div>
@@ -136,7 +137,12 @@
 <script type="text/javascript">
 $(function() {
 	$('#boton_iframe').on('click', function(e) {
-		$('#iframeforomap').slideDown();
+		$('#mapita').slideDown();
+	});
+
+	$('#ocultarmapa').on('click', function(e) {
+		e.preventDefault();
+		$('#mapita').slideUp();
 	});
 
 	$('#forosprovinciales').bind('change', function() {
