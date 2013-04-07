@@ -18,11 +18,9 @@
                {inbox_link}
                {custom_menu}
                {profile_link}
-               <!-- {signinout_link}  -->
+               <!-- {signinout_link}  -->		
             </ul>
         </div>
-                     <!-- botón escribir mensaje -->
-                <div class="centrardiscusion">{$Assets.Panel.NewDiscussionModule}</div>
 
       </div>
       <div id="Body">
@@ -36,13 +34,13 @@
             <div class="Column PanelColumn" id="Panel">
                {module name="MeModule"}
 		{if $User.SignedIn}
-			<div><a class="Button Primary BigButton" href="">1. Viaja a tu foro</a></div> 
+			<div><a class="Button Primary BigButton" href="/categories/oficina-{misucursal}">Viaja a tu foro</a></div> 
 		{else}
-			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="http://www.toqueabankia.net/toque.php">0. Regístrese</a></div>
-			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="/entry/signin?Target=discussions">1. Acceder</a></div>
+			<div><a rel="nofollow" class="Button Primary BigButton" href="http://www.toqueabankia.net/toque.php">Regístrese</a></div>
+			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="/entry/signin?Target=discussions">Acceder</a></div>
 		{/if}
 
-		<div><a class="Button Primary BigButton" id="boton_iframe">2. Mapa sucursales</a></div>
+		<div><a class="Button Primary BigButton" id="boton_iframe">Mapa sucursales</a></div>
 
 		<!-- SELECT PROVINCIAS -->
 		<select id="forosprovinciales" style="width:100%">
@@ -111,6 +109,10 @@
 
 		<!-- FIN SELECT PROVINCIAS -->
 
+                <!-- botón escribir mensaje -->
+                {if $User.SignedIn}
+			<div style="margin: 20px auto;width:100%">{$Assets.Panel.NewDiscussionModule}</div>
+		{/if}
 		
 
                <!--{asset name="Panel"}-->

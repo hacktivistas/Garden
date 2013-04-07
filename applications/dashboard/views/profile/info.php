@@ -25,8 +25,13 @@ if (Gdn::Config('Garden.Profile.ShowAbout')) {
       <dd class="Value Visits"><?php echo $this->User->CountVisits; ?></dd>
       <dt class="Label LastActive"><?php echo T('Last Active'); ?><dt>
       <dd class="Value LastActive"><?php echo Gdn_Format::Date($this->User->DateLastActive); ?></dd>
-      <dt class="Label Roles"><?php echo T('Roles'); ?><dt>
-      <dd class="Value Roles"><?php echo implode(', ', $this->Roles); ?></dd>
+	
+	<?php
+	/*
+	<dt class="Label Roles"><?php echo T('Roles'); ?><dt>
+	<dd class="Value Roles"><?php echo implode(', ', $this->Roles); ?></dd>
+	*/
+	?>
       <?php               
       if ($this->User->InviteUserID > 0) {
          $Inviter = new stdClass();
