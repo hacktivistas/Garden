@@ -210,7 +210,7 @@ $Definition['GenderSuffix.First.m'] = '';
 $Definition['GenderSuffix.Third.f'] = '';
 $Definition['GenderSuffix.Third.m'] = '';
 $Definition['Go'] = 'Ir';
-$Definition['GuestModule.Message'] = 'Pareces nuevo por aquí. Si quieres participar, ¡pulsa uno de estos botones!';
+$Definition['GuestModule.Message'] = 'Si quieres participar, ¡pulse uno de estos botones!';
 
 $Definition['he'] = 'El';
 $Definition['her'] = 'su';
