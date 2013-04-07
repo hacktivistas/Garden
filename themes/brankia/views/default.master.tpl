@@ -32,8 +32,13 @@
             <div class="BreadcrumbsWrapper">{breadcrumbs}</div>
             <div class="Column PanelColumn" id="Panel">
                {module name="MeModule"}
-		<div><a class="Button Primary BigButton" href="">Viaja a tu foro</a></div> 
-		<div><a class="Button Primary BigButton" id="boton_iframe">Mapa sucursales</a></div>
+		{if $User.SignedIn}
+			<div><a class="Button Primary BigButton" href="">1. Viaja a tu foro</a></div> 
+		{else}
+			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="/entry/signin?Target=discussions">1. Acceder</a></div>
+		{/if}
+
+		<div><a class="Button Primary BigButton" id="boton_iframe">2. Mapa sucursales</a></div>
 
 		<!-- SELECT PROVINCIAS -->
 		<select id="forosprovinciales" style="width:100%">
@@ -102,7 +107,7 @@
 
 		<!-- FIN SELECT PROVINCIAS -->
 
-
+<!--<a class="Button Primary Action NewDiscussion BigButton" href="/post/discussion/avila">Escribir mensaje</a>-->
                <!--{asset name="Panel"}-->
 	    </div>
             <div class="Column ContentColumn" id="Content">
