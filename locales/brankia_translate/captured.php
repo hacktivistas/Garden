@@ -236,20 +236,20 @@ $Definition['Login with Facebook'] = 'Acceder con Facebook';
 $Definition['Male'] = 'Hombre';
 $Definition['Most recent by %1$s'] = 'Más reciente por %1$s';
 $Definition['My Bookmarks'] = 'Marcadores';
-$Definition['My Discussions'] = 'Mis Discusiones';
+$Definition['My Discussions'] = 'Mis Mensajes';
 $Definition['My Drafts'] = 'Mis Borradores';
 $Definition['My Invitations'] = 'Mis Invitaciones';
 $Definition['My Preferences'] = 'Editar mis Preferencias';
 
 $Definition['Name Unavailable'] = 'Nombre no disponible';
-$Definition['No discussions were found.'] = 'No se encontraron discusiones.';
+$Definition['No discussions were found.'] = 'No se encontraron Mensajes.';
 $Definition['Notifications'] = 'Notificaciones';
 $Definition['Notify me of private messages.'] = 'Notificarme de mensajes privados.';
 $Definition['Notify me when I am added to private conversations.'] = 'Notificarme cuando sea añadido a una conversación privada.';
-$Definition['Notify me when people comment on my bookmarked discussions.'] = 'Notificarme cuando la gente comente mis discusiones Marcadas.';
-$Definition['Notify me when people comment on my discussions.'] = 'Notificarme cuando la gente comente mis discusiones.';
+$Definition['Notify me when people comment on my bookmarked discussions.'] = 'Notificarme cuando la gente comente mis mensajes marcados.';
+$Definition['Notify me when people comment on my discussions.'] = 'Notificarme cuando la gente comente mis mensajes.';
 $Definition['Notify me when people mention me in comments.'] = 'Notificarme cuando la gente me mencione en comentarios.';
-$Definition['Notify me when people mention me in discussion titles.'] = 'Notificarme cuando la gente me mencione en discusiones';
+$Definition['Notify me when people mention me in discussion titles.'] = 'Notificarme cuando la gente me mencione en mensajes';
 $Definition['Notify me when people reply to my wall comments.'] = 'Notificarme cuando la gente conteste mis mensajes en el muro.';
 $Definition['Notify me when people write on my wall.'] = 'Notificarme cuando la gente escriba en mi muro.';
 
