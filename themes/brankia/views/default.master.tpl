@@ -39,7 +39,7 @@
 		{if $User.SignedIn}
 			<div><a class="Button Primary BigButton" href="/categories/oficina-{misucursal}">Viaja a tu sucursal</a></div> 
 		{else}
-			<div><a rel="nofollow" class="Button Primary BigButton" href="http://www.toqueabankia.net/toque.php">Regístrese</a></div>
+			<div><a rel="nofollow" class="Button Primary BigButton" href="http://www.toqueabankia.net/toque.html">Regístrese</a></div>
 			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="/entry/signin?Target=discussions">Acceder</a></div>
 		{/if}
 

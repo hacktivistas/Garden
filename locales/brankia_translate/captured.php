@@ -114,7 +114,7 @@ $Definition['Delete Discussion'] = 'Eliminar Discusión';
 $Definition['discussion'] = 'discusión';
 $Definition['Discussion Title'] = 'Título de la Discusión';
 $Definition['Discussions'] = 'Mensajes';
-$Definition['Don\'t have an account? %s'] = 'Si no tienes create una cuenta en <a href="http://toqueabankia.net/toque.php">toqueabankia.net/toque.php</a>';
+$Definition['Don\'t have an account? %s'] = 'Si no tienes create una cuenta en <a href="http://toqueabankia.net/toque.html">toqueabankia.net/toque.html</a>';
 $Definition['dot'] = 'punto';
 $Definition['Drag around and resize the square below to define your thumbnail icon.'] = 'Arrastra y cambia el tamaño del recuadro sobre la foto para definir tu avatar.';
 
