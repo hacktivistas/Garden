@@ -135,6 +135,7 @@
    {event name="AfterBody"}
 
 {literal}
+<!-- TODO: cargarlo en un js -->
 <script type="text/javascript">
 $(function() {
 	$('#boton_iframe').on('click', function(e) {
