@@ -27,16 +27,17 @@
 
 <!-- iframe con el mapa oculto -->
 <div id="mapita" class="sinmargen" style="display:none;">
-<iframe id="iframeforomap" src="http://bankia.mepone.net/map/foros.html" class="sinmargen" style="position:relative;top:0;left:0;width:100%;height:500px;z-index:1000;"></iframe>
+<iframe id="iframeforomap" src="http://www.toqueabankia.net/map/foros.html" class="sinmargen" style="position:relative;top:0;left:0;width:100%;height:500px;z-index:1000;"></iframe>
 <div class="sinmargen" style="width:100%;"><a id="ocultarmapa" class="Button Primary BigButton" style="float:right;" href="">Ocultar mapa</a></div>
 </div>
 
          <div class="Row">
-            <div class="BreadcrumbsWrapper">{breadcrumbs}</div>
+		<div class="BreadcrumbsWrapper">&nbsp;</div>
+           
             <div class="Column PanelColumn" id="Panel">
                {module name="MeModule"}
 		{if $User.SignedIn}
-			<div><a class="Button Primary BigButton" href="/categories/oficina-{misucursal}">Viaja a tu foro</a></div> 
+			<div><a class="Button Primary BigButton" href="/categories/oficina-{misucursal}">Viaja a tu sucursal</a></div> 
 		{else}
 			<div><a rel="nofollow" class="Button Primary BigButton" href="http://www.toqueabankia.net/toque.php">Regístrese</a></div>
 			<div><a rel="nofollow" class="Button Primary BigButton SignInPopup" href="/entry/signin?Target=discussions">Acceder</a></div>
@@ -126,7 +127,7 @@
       </div>
       <div id="Foot">
          <div class="Row">
-            <a href="{vanillaurl}" class="PoweredByVanilla" title="Community Software by Vanilla Forums">Powered by Vanilla</a>
+           
             {asset name="Foot"}
          </div>
       </div>

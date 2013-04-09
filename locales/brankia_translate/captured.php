@@ -114,7 +114,7 @@ $Definition['Delete Discussion'] = 'Eliminar Discusión';
 $Definition['discussion'] = 'discusión';
 $Definition['Discussion Title'] = 'Título de la Discusión';
 $Definition['Discussions'] = 'Mensajes';
-$Definition['Don\'t have an account? %s'] = '¿No tienes una cuenta? %s';
+$Definition['Don\'t have an account? %s'] = 'Si no tienes create una cuenta en <a href="http://toqueabankia.net/toque.php">toqueabankia.net/toque.php</a>';
 $Definition['dot'] = 'punto';
 $Definition['Drag around and resize the square below to define your thumbnail icon.'] = 'Arrastra y cambia el tamaño del recuadro sobre la foto para definir tu avatar.';
 
@@ -242,7 +242,7 @@ $Definition['My Invitations'] = 'Mis Invitaciones';
 $Definition['My Preferences'] = 'Editar mis Preferencias';
 
 $Definition['Name Unavailable'] = 'Nombre no disponible';
-$Definition['No discussions were found.'] = 'No se encontraron Mensajes.';
+$Definition['No discussions were found.'] = 'Nadie ha escrito aún por estos lugares abandonados de la mano de dios. Si te da la gana puedes ser la primera persona en escribir aquí. Es muy recomendable escribir algo para animar a que otras personas al entrar no vean esto tan solitario como lo estas viendo tu ahora mismo. Sientete libre de abrir una nueva discusión aquí si gustas pinchando en Escribir mensaje.<p> Besos de Rodrigo Grato para ti y todos tus familiares.</p>';
 $Definition['Notifications'] = 'Notificaciones';
 $Definition['Notify me of private messages.'] = 'Notificarme de mensajes privados.';
 $Definition['Notify me when I am added to private conversations.'] = 'Notificarme cuando sea añadido a una conversación privada.';
@@ -256,7 +256,7 @@ $Definition['Notify me when people write on my wall.'] = 'Notificarme cuando la 
 $Definition['Okay'] = 'Ok';
 $Definition['On'] = 'En'; #
 $Definition['Options'] = 'Opciones';
-$Definition['Or you can...'] = 'O puedes...';
+$Definition['Or you can...'] = '';
 $Definition['Original'] = 'Original';
 
 $Definition['PageDetailsMessage'] = '%1$s a %2$s';

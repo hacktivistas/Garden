@@ -44,10 +44,11 @@
       </li>
       <li class="Gender">
          <?php
-            echo $this->Form->Label('Gender', 'Gender');
-            echo $this->Form->RadioList('Gender', $this->GenderOptions, array('default' => 'u'))
+           // echo $this->Form->Label('Gender', 'Gender');
+           // echo $this->Form->RadioList('Gender', $this->GenderOptions, array('default' => 'u'))
          ?>
       </li>
+
       <?php if ($this->Form->GetValue('DiscoveryText') || GetValue('DiscoveryText', $this->Form->ValidationResults()) ): ?>
       <li>
          <?php
