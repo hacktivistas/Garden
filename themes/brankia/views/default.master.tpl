@@ -47,6 +47,7 @@
 
 		<!-- SELECT PROVINCIAS -->
 		<select id="forosprovinciales" style="width:100%">
+			<option value="/">Foros Provinciales</option>
 			<option value="/categories/alava">Álava</option>
 			<option value="/categories/albacete">Albacete</option>
 			<option value="/categories/alicante">Alicante</option>
