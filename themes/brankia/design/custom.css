@@ -16,3 +16,13 @@ border: 0;
 .BreadcrumbsWrapper {
 margin-bottom: 5px;
 }
+.Row {
+position: relative;
+}
+.reloj {
+position: absolute;
+top: 40px;
+left: 121px;
+color: #b5c502;
+text-shadow: 2px 2px #3f2d23;
+}

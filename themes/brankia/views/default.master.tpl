@@ -10,6 +10,7 @@
          <div class="Row">
             <!--<strong class="SiteTitle"><a href="{link path="/"}">{logo}</a></strong>-->
             <strong class="SiteTitle"><a href="{link path="/"}"><img src="/themes/brankia/logoforo.png" /></a></strong>
+	    <div class="reloj" title="Toma tu Bankia">05/09/2013 12:00</div>
             <!--<div class="SiteSearch">{searchbox}</div>-->
             <ul class="SiteMenu">
                {dashboard_link}
@@ -137,8 +138,12 @@
 
 {literal}
 <!-- TODO: cargarlo en un js -->
+<script src="/themes/brankia/jquery.cuenta-atras.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function() {
+	
+	$('.reloj').cuentaAtras();
+
 	$('#boton_iframe').on('click', function(e) {
 		$('#mapita').slideDown();
 	});
@@ -155,7 +160,6 @@ $(function() {
 		}
 		return false;
 	});
-
 
 });
 </script>
