@@ -114,7 +114,7 @@
 
 		<!-- FIN SELECT PROVINCIAS -->
 
-               <!-- asset name="Panel" -->
+                <!-- asset name="Panel" -->
 	    </div>
 
              <!-- BOTÓN: Escribir mensaje -->

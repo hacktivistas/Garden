@@ -1,0 +1,20 @@
+   
+#Body {
+margin:0 auto;
+color: white;
+background:transparent!important;
+width:100%;
+} 
+   
+#Content {
+width: 920px!important;
+margin: 0 auto;
+float: none;
+}
+#Panel{
+display:none!important;
+}
+    
+#Foot {
+background:none transparent!important;
+}
