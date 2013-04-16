@@ -113,7 +113,7 @@
 		</select>
 
 		{if $User.SignedIn}
-			<div class="botonmail"><a rel="nofollow" class="Button DraftButton notimail" href="http://foros.toqueabankia.net/profile/preferences">Notificaciones email</a></div>			
+			<div class="botonmail"><a rel="nofollow" class="Button notimail" href="http://foros.toqueabankia.net/profile/preferences" target="_blank">Notificaciones email</a></div>			
 		{/if}
 
 		<!-- FIN SELECT PROVINCIAS -->
