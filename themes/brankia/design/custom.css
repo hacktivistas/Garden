@@ -29,4 +29,10 @@ text-shadow: 2px 2px #3f2d23;
 #forosprovinciales {
 font-family: 'lucida grande','Lucida Sans Unicode',tahoma,sans-serif;
 }
-
+.botonmail {
+margin-top: 15px;
+text-align: center;
+}
+.notimail {
+font-weight: normal;
+}
