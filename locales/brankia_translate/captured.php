@@ -354,4 +354,15 @@ $Definition['your'] = 'tu';
 $Definition['Your application will be reviewed by an administrator. You will be notified by email if your application is approved.'] = 'Su solicitud será revisada por un administrador. Si su solicitud es aprobada se le avisará por correo .';
 $Definition['Your registered username: <strong>%s</strong>'] = 'Tu nombre de usuario registrado: <strong>%s</strong>';
 
+// de EmailSubscribe
+$Definition['DiscStart'] = ' inició un nuevo debate';
+$Definition['E-mail Subscriptions'] = 'Subscripciones por correo electrónico';
+$Definition['Your changes have been saved.'] = 'Cambios guardados con éxito.';
+$Definition['Manage E-mail Subscriptions'] = 'Gestionar subscripciones de e-mail';
+$Definition['SubscribeAll'] = 'Subscribir todos los usuarios a todas las categorías que tengan permiso para ver';
+$Definition['General Settings'] = 'Configuración General';
+$Definition['Subscribe to all discussions'] = 'Subscribir a todos los debates';
+$Definition['Categories Settings'] = 'Opciones de categorías';
+$Definition['Subscribe to category '] = 'Subscribir a categoría ';
+$Definition['Save'] = 'Guardar';
 
