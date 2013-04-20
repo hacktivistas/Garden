@@ -113,8 +113,8 @@
 		</select>
 
 		
-		<!--	<div class="botonmail"><a rel="nofollow" class="Button notimail" href="http://foros.toqueabankia.net/profile/preferences" target="_blank">Notificaciones email</a></div>  -->
-		
+		<!--	<div class="botonmail"><a rel="nofollow" class="Button notimail" href="http://foros.toqueabankia.net/profile/preferences" target="_blank">Notificaciones email</a></div> -->
+			
 
 		<!-- FIN SELECT PROVINCIAS -->
 
